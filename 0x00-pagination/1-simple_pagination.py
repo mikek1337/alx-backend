@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+"""split Popular_Baby_Names csv into pages"""
 import csv
 import math
 from typing import List
