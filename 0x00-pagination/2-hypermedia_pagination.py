@@ -44,3 +44,24 @@ class Server:
     def index_range(self, page, page_size):
         """finds the index range from page and page_size"""
         return ((page - 1) * page_size, page * page_size)
+
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
+        current_page = page
+        next_page = current_page + 1
+        prev_page = current_page - 1
+        page_data = self.get_page(page, page_size)
+        total_pages = math.floor(len(self.__dataset) / page_size)
+        page_info = dict()
+        page_info["page_size"] = page_size
+        page_info["page"] = current_page
+        page_info["data"] = page_data
+        if (next_page > total_pages):
+            page_info["next_page"] = None
+        else:
+            page_info["next_page"] = next_page
+        if (prev_page <= 0):
+            page_info["prev_page"] = None
+        else:
+            page_info["prev_page"] = prev_page
+        page_info["total_pages"] = total_pages
+        return page_info
