@@ -9,7 +9,7 @@ class BasicCache(BaseCaching):
         """Adds an item in the cache"""
         if key is not None and item is not None:
             self.cache_data[key] = item
-    
+
     def get(self, key):
         """Gets an item from cache"""
         if key is not None and key in self.cache_data:
