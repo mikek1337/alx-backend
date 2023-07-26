@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Basic caching module"""
+"""Simple caching module"""
 
 from base_caching import BaseCaching
 
