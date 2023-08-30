@@ -55,8 +55,8 @@ jobs.forEach((job) => {
         if (!err) console.log(`Notification job created: ${jobCreated.id}`)
     }).on('complete', () => {
         console.log(`Notification job ${jobCreated.id} completed`)
-    }).on('progress', () => {
-        console.log(`Notification job ${jobCreated.id} ${jobCreated.progress}% complete`)
+    }).on('progress', (progress, _data) => {
+        console.log(`Notification job ${jobCreated.id} ${progress}% complete`)
     }).on('failure', (err) => {
         console.log(`Notification job ${jobCreated.id} failed: ${err}`)
     })
